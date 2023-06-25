@@ -12,6 +12,7 @@ namespace SpaceShooters.Classes {
         public PictureBox image;
         public int healthPoints = 20;
         public bool direction = false; // right/left
+        public bool moveDown { get; set; }
 
         public EnemyBoss(Point center) {
             image = new PictureBox() {
@@ -20,6 +21,7 @@ namespace SpaceShooters.Classes {
                 SizeMode = PictureBoxSizeMode.StretchImage,
                 Location = center
             };
+            moveDown = true;
         }
 
         public void switchDirection() {
@@ -34,8 +36,18 @@ namespace SpaceShooters.Classes {
 
         public void moveVertical() {
             Point pos = image.Location;
-            pos.Y += 10;
-            image.Location = pos;
+            if (moveDown){
+                if (pos.Y + image.Height + 10 > 250)
+                    moveDown = false;
+                pos.Y += 10;
+                image.Location = pos;
+            }
+            else {
+                if (pos.Y - 10 < 50)
+                    moveDown = true;
+                pos.Y -= 10;
+                image.Location = pos;
+            }
         }
     }
 }
