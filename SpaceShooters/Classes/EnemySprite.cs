@@ -26,7 +26,7 @@ namespace SpaceShooters.Classes {
             // Choose random image from enemy sprites
             enemy = new PictureBox {
                 Image = enemyImages.ElementAt(random.Next(0, enemyImages.Count)),
-                Size = new Size(40, 40),
+                Size = new Size(60, 60),
                 SizeMode = PictureBoxSizeMode.StretchImage
             };
         }

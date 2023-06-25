@@ -12,9 +12,9 @@ namespace SpaceShooters.Classes {
     public class Projectile {
         public PictureBox image;
 
-        public Projectile() {
+        public Projectile(Image img) {
             image = new PictureBox {
-                Image = Image.FromFile("Resources/bulletTEMP.png"),
+                Image = img,
                 Size = new Size(5, 10),
                 SizeMode = PictureBoxSizeMode.StretchImage
             };
@@ -23,6 +23,12 @@ namespace SpaceShooters.Classes {
         public void move() {
             Point pos = image.Location;
             pos.Y -= 10;
+            image.Location = pos;
+        }
+
+        public void moveDown() {
+            Point pos = image.Location;
+            pos.Y += 10;
             image.Location = pos;
         }
     }

@@ -37,11 +37,11 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Navy;
             this.label1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label1.Font = new System.Drawing.Font("Stencil", 10.2F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
             this.label1.Location = new System.Drawing.Point(97, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(593, 360);
+            this.label1.Size = new System.Drawing.Size(470, 360);
             this.label1.TabIndex = 0;
             this.label1.Text = resources.GetString("label1.Text");
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

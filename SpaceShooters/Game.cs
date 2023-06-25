@@ -1,4 +1,5 @@
 ﻿using SpaceShooters.Classes;
+using SpaceShooters.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,12 @@ namespace SpaceShooters {
 
         bool isRightPressed = false;
         bool isLeftPressed = false;
+        bool bossSpawned = false;
         Random random = new Random();
         List<Projectile> projectiles = new List<Projectile>();
         List<EnemySprite> sprites = new List<EnemySprite>();
+        List<Projectile> bossProjectiles = new List<Projectile>();
+        EnemyBoss boss;
         public int deletedEnemies { get; set; }
         public int playerPoints { get; set; }
         public int timerTicks { get; set; }
@@ -31,7 +35,7 @@ namespace SpaceShooters {
         }
 
         private void Game_Load(object sender, EventArgs e) {
-            //Controls.Add(playerPB);
+            
         }
 
         private void Game_KeyDown(object sender, KeyEventArgs e) {
@@ -43,7 +47,7 @@ namespace SpaceShooters {
             }
 
             if (e.KeyCode == Keys.Space) {
-                Projectile bullet = new Projectile();
+                Projectile bullet = new Projectile(new Bitmap(Resources.bulletTEMP));
                 bullet.image.Location = getCenterPointPlayer(); // Shoot projectile from player center
                 Controls.Add(bullet.image);
                 projectiles.Add(bullet);
@@ -62,8 +66,21 @@ namespace SpaceShooters {
 
         private void timer1_Tick(object sender, EventArgs e) {
             timerTicks++;
-            if (timerTicks % 20 == 0) spawnEnemies();
-            if (timerTicks == 10000) timerTicks = 0;
+            if (playerPoints < 10 && timerTicks % 20 == 0) spawnEnemies();
+            if (playerPoints >= 10 && !bossSpawned) { // 100 points, 10 for testing
+                spawnBoss();
+                bossSpawned = true;
+            }
+
+            if(bossSpawned) {
+                boss.moveHorizontal();
+                if (timerTicks % 25 == 0) boss.moveVertical();
+                if (timerTicks % 20 == 0) bossAttack();
+
+                if(checkBoundsToSwapDirection()) {
+                    boss.switchDirection();
+                }
+            }
             movePlayer();
             moveUnits();
             bulletIsOutOfFrame();
@@ -72,6 +89,8 @@ namespace SpaceShooters {
             if (playerPoints == 150)
                 endGame();
         }
+
+        
 
         private void movePlayer() {
             Point newPos = playerPB.Location;
@@ -92,7 +111,7 @@ namespace SpaceShooters {
         // For projectiles
         private Point getCenterPointPlayer() {
             int x = playerPB.Location.X + playerPB.Width / 2 - 5;
-            int y = playerPB.Location.Y - 20;
+            int y = playerPB.Location.Y - 21;
             return new Point(x, y);
         }
         private void bulletIsOutOfFrame() {
@@ -110,6 +129,8 @@ namespace SpaceShooters {
                 projectiles.ForEach(p => p.move());
             if (sprites.Count > 0)
                 sprites.ForEach(s => s.move());
+            if(bossProjectiles.Count > 0)
+                bossProjectiles.ForEach(p => p.moveDown());
         }
 
         private void checkHit() {
@@ -174,6 +195,30 @@ namespace SpaceShooters {
             }
         }
 
-        
+        // BOSS CODE
+        private bool checkBoundsToSwapDirection() {
+            if (boss.image.Location.X < 5) return true;
+            if (boss.image.Location.X + boss.image.Width > Width - 5) return true;
+            return false;
+        }
+
+        private void spawnBoss() {
+            boss = new EnemyBoss(new Point(Width / 2 - 100, 0));
+            Controls.Add(boss.image);
+        }
+
+        private void bossAttack() {
+            Point center = getCenterPointBoss();
+            Projectile projectile = new Projectile(new Bitmap(Resources.bossProjectile));
+            projectile.image.Location = center;
+            Controls.Add(projectile.image);
+            bossProjectiles.Add(projectile);
+        }
+
+        private Point getCenterPointBoss() {
+            int x = boss.image.Location.X + boss.image.Width / 2;
+            int y = boss.image.Location.Y + 150;
+            return new Point(x, y);
+        }
     }
 }

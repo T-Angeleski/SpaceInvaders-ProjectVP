@@ -23,5 +23,7 @@ namespace SpaceShooters
             label1.Location = new Point((this.ClientSize.Width - label1.Width) / 2, (this.ClientSize.Height - label1.Height) / 2);
             label1.Anchor = AnchorStyles.None;
         }
+
+        
     }
 }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\EnemyBoss.cs" />
     <Compile Include="Classes\EnemySprite.cs" />
     <Compile Include="Classes\Player.cs" />
     <Compile Include="Classes\Projectile.cs" />
@@ -108,6 +109,7 @@
     <Content Include="Properties\Images\404_solid_bigger.png" />
     <Content Include="Properties\Images\404_transparent.png" />
     <Content Include="Properties\Images\404_transparent_bigger.png" />
+    <Content Include="Properties\Images\bossProjectile.png" />
     <Content Include="Properties\Images\dinosaur.png" />
     <Content Include="Properties\Images\dinosaur_transparent.png" />
     <Content Include="Properties\Images\error.png" />
@@ -118,28 +120,10 @@
     <Content Include="Properties\Images\missing_transparent.png" />
     <Content Include="Properties\Images\triangle.png" />
     <Content Include="Properties\Images\triangle_transparent.png" />
-    <Content Include="Resources\bulletTEMP.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\main-menu-background.png" />
-    <None Include="Resources\button-main-menu.png" />
-    <None Include="Resources\lives_logo.png" />
     <None Include="Resources\sound-speaker-icon-on-white-background-free-vector.jpg" />
-    <None Include="Resources\404_transparent.png" />
-    <None Include="Resources\404_transparent_bigger.png" />
-    <None Include="Resources\404_solid.png" />
-    <None Include="Resources\404_solid_bigger.png" />
-    <None Include="Resources\dinosaur.png" />
-    <None Include="Resources\dinosaur_transparent.png" />
-    <None Include="Resources\error_transparent.png" />
-    <None Include="Resources\error.png" />
-    <None Include="Resources\error_shaded.png" />
-    <None Include="Resources\missing_transparent.png" />
-    <None Include="Resources\missing.png" />
-    <None Include="Resources\triangle_transparent.png" />
-    <None Include="Resources\triangle.png" />
-    <None Include="Resources\keyboard.png" />
-    <None Include="Resources\404_shaded.png" />
+    <None Include="Resources\lives_logo.png" />
+    <None Include="Resources\bulletTEMP.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

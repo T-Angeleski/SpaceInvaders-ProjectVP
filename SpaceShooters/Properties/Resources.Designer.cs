@@ -65,7 +65,7 @@ namespace SpaceShooters.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _404_shaded {
             get {
-                object obj = ResourceManager.GetObject("404_shaded", resourceCulture);
+                object obj = ResourceManager.GetObject("_404_shaded", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -75,7 +75,7 @@ namespace SpaceShooters.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _404_solid {
             get {
-                object obj = ResourceManager.GetObject("404_solid", resourceCulture);
+                object obj = ResourceManager.GetObject("_404_solid", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -85,7 +85,7 @@ namespace SpaceShooters.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _404_solid_bigger {
             get {
-                object obj = ResourceManager.GetObject("404_solid_bigger", resourceCulture);
+                object obj = ResourceManager.GetObject("_404_solid_bigger", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,7 +95,7 @@ namespace SpaceShooters.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _404_transparent {
             get {
-                object obj = ResourceManager.GetObject("404_transparent", resourceCulture);
+                object obj = ResourceManager.GetObject("_404_transparent", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -105,7 +105,7 @@ namespace SpaceShooters.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _404_transparent_bigger {
             get {
-                object obj = ResourceManager.GetObject("404_transparent_bigger", resourceCulture);
+                object obj = ResourceManager.GetObject("_404_transparent_bigger", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,19 @@ namespace SpaceShooters.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap button_main_menu {
+        internal static System.Drawing.Bitmap bossProjectile {
             get {
-                object obj = ResourceManager.GetObject("button-main-menu", resourceCulture);
+                object obj = ResourceManager.GetObject("bossProjectile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bulletTEMP {
+            get {
+                object obj = ResourceManager.GetObject("bulletTEMP", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -195,7 +205,7 @@ namespace SpaceShooters.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap main_menu_background {
             get {
-                object obj = ResourceManager.GetObject("main-menu-background", resourceCulture);
+                object obj = ResourceManager.GetObject("main_menu_background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -225,7 +235,7 @@ namespace SpaceShooters.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap sound_speaker_icon_on_white_background_free_vector {
             get {
-                object obj = ResourceManager.GetObject("sound-speaker-icon-on-white-background-free-vector", resourceCulture);
+                object obj = ResourceManager.GetObject("sound_speaker_icon_on_white_background_free_vector", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
