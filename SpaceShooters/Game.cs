@@ -79,8 +79,8 @@ namespace SpaceShooters {
 
         private void timer1_Tick(object sender, EventArgs e) {
             timerTicks++;
-            if (playerPoints < 10 && timerTicks % 20 == 0) spawnEnemies();
-            if (playerPoints >= 10 && !bossSpawned){ // 100 points, 10 for testing
+            if (playerPoints < 150 && timerTicks % 20 == 0) spawnEnemies();
+            if (playerPoints >= 150 && !bossSpawned){ // 100 points, 10 for testing
                 spawnBoss();
                 bossSpawned = true;
                 showBossLifeBar();
@@ -110,7 +110,7 @@ namespace SpaceShooters {
             }
             if (mistakes == 3)
                 endGame();
-            if (playerPoints == 10 && bossDefeated) 
+            if (playerPoints == 150 && bossDefeated) 
                 gameWon();
         }
 
@@ -335,7 +335,7 @@ namespace SpaceShooters {
         }
 
         private void spawnBoss() {
-            boss = new EnemyBoss(new Point(Width / 2 - 100, 0));
+            boss = new EnemyBoss(new Point(Width / 2 - 100, 50));
             Controls.Add(boss.image);
         }
 

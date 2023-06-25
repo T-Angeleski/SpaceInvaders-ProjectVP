@@ -113,6 +113,16 @@ namespace SpaceShooters.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap boss_bug_transparent {
+            get {
+                object obj = ResourceManager.GetObject("boss_bug_transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bossProjectile {
             get {
                 object obj = ResourceManager.GetObject("bossProjectile", resourceCulture);

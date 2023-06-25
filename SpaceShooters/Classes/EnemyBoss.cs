@@ -16,7 +16,7 @@ namespace SpaceShooters.Classes {
 
         public EnemyBoss(Point center) {
             image = new PictureBox() {
-                Image = new Bitmap(Resources._404_transparent),
+                Image = new Bitmap(Resources.boss_bug_transparent),
                 Size = new Size(150, 150),
                 SizeMode = PictureBoxSizeMode.StretchImage,
                 Location = center

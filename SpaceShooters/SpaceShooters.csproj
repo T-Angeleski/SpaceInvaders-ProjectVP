@@ -110,6 +110,7 @@
     <Content Include="Properties\Images\404_transparent.png" />
     <Content Include="Properties\Images\404_transparent_bigger.png" />
     <Content Include="Properties\Images\bossProjectile.png" />
+    <Content Include="Properties\Images\boss_bug_transparent.png" />
     <Content Include="Properties\Images\dinosaur.png" />
     <Content Include="Properties\Images\dinosaur_transparent.png" />
     <Content Include="Properties\Images\error.png" />
