@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B3C50716-9574-4DB7-A1B6-02794087F401}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SpaceShooters</RootNamespace>
+    <AssemblyName>SpaceShooters</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\EnemySprite.cs" />
+    <Compile Include="Classes\Player.cs" />
+    <Compile Include="Classes\Projectile.cs" />
+    <Compile Include="Game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game.Designer.cs">
+      <DependentUpon>Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenuForm.Designer.cs">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rules.Designer.cs">
+      <DependentUpon>Rules.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Game.resx">
+      <DependentUpon>Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenuForm.resx">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Rules.resx">
+      <DependentUpon>Rules.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Properties\Images\404_shaded.png" />
+    <Content Include="Properties\Images\404_solid.png" />
+    <Content Include="Properties\Images\404_solid_bigger.png" />
+    <Content Include="Properties\Images\404_transparent.png" />
+    <Content Include="Properties\Images\404_transparent_bigger.png" />
+    <Content Include="Properties\Images\dinosaur.png" />
+    <Content Include="Properties\Images\dinosaur_transparent.png" />
+    <Content Include="Properties\Images\error.png" />
+    <Content Include="Properties\Images\error_shaded.png" />
+    <Content Include="Properties\Images\error_transparent.png" />
+    <Content Include="Properties\Images\keyboard.png" />
+    <Content Include="Properties\Images\missing.png" />
+    <Content Include="Properties\Images\missing_transparent.png" />
+    <Content Include="Properties\Images\triangle.png" />
+    <Content Include="Properties\Images\triangle_transparent.png" />
+    <Content Include="Resources\bulletTEMP.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\main-menu-background.png" />
+    <None Include="Resources\button-main-menu.png" />
+    <None Include="Resources\lives_logo.png" />
+    <None Include="Resources\sound-speaker-icon-on-white-background-free-vector.jpg" />
+    <None Include="Resources\404_transparent.png" />
+    <None Include="Resources\404_transparent_bigger.png" />
+    <None Include="Resources\404_solid.png" />
+    <None Include="Resources\404_solid_bigger.png" />
+    <None Include="Resources\dinosaur.png" />
+    <None Include="Resources\dinosaur_transparent.png" />
+    <None Include="Resources\error_transparent.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\error_shaded.png" />
+    <None Include="Resources\missing_transparent.png" />
+    <None Include="Resources\missing.png" />
+    <None Include="Resources\triangle_transparent.png" />
+    <None Include="Resources\triangle.png" />
+    <None Include="Resources\keyboard.png" />
+    <None Include="Resources\404_shaded.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
