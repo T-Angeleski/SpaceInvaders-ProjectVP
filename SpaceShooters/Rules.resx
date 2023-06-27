@@ -128,13 +128,11 @@ destroy the computer bugs by pressing the space button.
 You can move the keyboard (cannon) left and right using 
 the left and right arrow buttons on your computer.
 
-The computer bugs will randomly shoot towards the keyboard 
-(cannon).
-
 If a computer bug is shot by the keyboard (cannon), it is 
 destroyed and the player gains 10 points, if the keyboard 
 (cannon) is shot, one life is lost.
 
-The game is won if the player scores 150 points.</value>
+The game is won if the player scores 150 points.
+</value>
   </data>
 </root>

@@ -15,7 +15,7 @@ namespace SpaceShooters.Classes {
         public Projectile(Image img) {
             image = new PictureBox {
                 Image = img,
-                Size = new Size(5, 10),
+                Size = new Size(7, 14),
                 SizeMode = PictureBoxSizeMode.StretchImage
             };
         }

@@ -27,7 +27,8 @@ namespace SpaceShooters.Classes {
             enemy = new PictureBox {
                 Image = enemyImages.ElementAt(random.Next(0, enemyImages.Count)),
                 Size = new Size(60, 60),
-                SizeMode = PictureBoxSizeMode.StretchImage
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                BackColor = Color.Transparent
             };
         }
         public void move() {

@@ -119,6 +119,14 @@
     <Content Include="Properties\Images\keyboard.png" />
     <Content Include="Properties\Images\missing.png" />
     <Content Include="Properties\Images\missing_transparent.png" />
+    <None Include="Resources\background4.png" />
+    <None Include="Resources\background3.png" />
+    <None Include="Resources\background2.jpg" />
+    <None Include="Resources\background1.jpg" />
+    <None Include="Resources\background.jpg" />
+    <None Include="Properties\Images\pixil-frame-0.png" />
+    <None Include="Properties\Images\pixil-frame-1.png" />
+    <None Include="Properties\Images\pixil-frame-2.png" />
     <Content Include="Properties\Images\triangle.png" />
     <Content Include="Properties\Images\triangle_transparent.png" />
     <None Include="Resources\main-menu-background.png" />

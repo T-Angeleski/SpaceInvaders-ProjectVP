@@ -21,11 +21,20 @@ namespace SpaceShooters {
         List<Projectile> projectiles = new List<Projectile>();
         List<EnemySprite> sprites = new List<EnemySprite>();
         List<Projectile> bossProjectiles = new List<Projectile>();
+        List<Image> backgrounds = new List<Image>() {
+            new Bitmap(Resources.background1),
+            new Bitmap(Resources.background2),
+            new Bitmap(Resources.background3),
+            new Bitmap(Resources.background4),
+        };
+
         EnemyBoss boss;
         public int mistakes { get; set; }
         public int playerPoints { get; set; }
         public int onBossHits { get; set; }
         public int timerTicks { get; set; }
+
+        private int currentBG = 0;
 
         public Game() {
             InitializeComponent();
@@ -35,17 +44,7 @@ namespace SpaceShooters {
             playerPoints = 0;
             onBossHits = 0;
             timer1.Start();
-            bossLiveslbl.Visible = false;
-            bossLive1.Visible = false;
-            bossLive2.Visible = false;
-            bossLive3.Visible = false;
-            bossLive4.Visible = false;
-            bossLive5.Visible = false;
-            bossLive6.Visible = false;
-            bossLive7.Visible = false;
-            bossLive8.Visible = false;
-            bossLive9.Visible = false;
-            bossLive10.Visible = false;
+            showBossLifeBar(false);
         }
 
         private void Game_Load(object sender, EventArgs e) {
@@ -79,54 +78,78 @@ namespace SpaceShooters {
 
         private void timer1_Tick(object sender, EventArgs e) {
             timerTicks++;
+
+            // Spawn enemies untill point threshold is reached
             if (playerPoints < 150 && timerTicks % 20 == 0) spawnEnemies();
-            if (playerPoints >= 150 && !bossSpawned){ // 100 points, 10 for testing
+            if (playerPoints >= 150 && !bossSpawned) { // 100 points, 10 for testing
                 spawnBoss();
                 bossSpawned = true;
-                showBossLifeBar();
+                showBossLifeBar(true);
             }
+
+            if (timerTicks % 40 == 0) changeBG();
 
             if (bossSpawned) {
                 removeEnemySprites();
                 boss.moveHorizontal();
                 if (timerTicks % 25 == 0) boss.moveVertical();
                 if (timerTicks % 20 == 0) bossAttack();
+                if (timerTicks % 10 == 0) boss.animate();
 
-                if(checkBoundsToSwapDirection()) {
+                if (checkBoundsToSwapDirection()) {
                     boss.switchDirection();
                 }
                 checkIfBossHitPlayer();
                 checkIfPlayerHitBoss();
             }
+
             movePlayer();
             moveUnits();
+
             bulletIsOutOfFrame();
             enemyIsOutOfFrame();
             checkHit();
-            if (onBossHits == 10){
+
+            // Check if game ended
+            if (onBossHits == 10) {
                 bossDefeated = true;
                 bossSpawned = false;
                 Controls.Remove(boss.image);
             }
             if (mistakes == 3)
                 endGame();
-            if (playerPoints == 150 && bossDefeated) 
+            if (bossDefeated)
                 gameWon();
         }
 
-        private void showBossLifeBar()
-        {
-            bossLiveslbl.Visible = true;
-            bossLive1.Visible = true;
-            bossLive2.Visible = true;
-            bossLive3.Visible = true;
-            bossLive4.Visible = true;
-            bossLive5.Visible = true;
-            bossLive6.Visible = true;
-            bossLive7.Visible = true;
-            bossLive8.Visible = true;
-            bossLive9.Visible = true;
-            bossLive10.Visible = true;
+        private void changeBG() {
+            if (currentBG == 0) {
+                BackgroundImage = backgrounds[0];
+                currentBG++;
+            } else if (currentBG == 1) {
+                BackgroundImage = backgrounds[1];
+                currentBG++;
+            } else if (currentBG == 2) {
+                BackgroundImage = backgrounds[2];
+                currentBG++;
+            } else {
+                BackgroundImage = backgrounds[3];
+                currentBG = 0;
+            }
+        }
+
+        private void showBossLifeBar(bool value) {
+            bossLiveslbl.Visible = value;
+            bossLive1.Visible = value;
+            bossLive2.Visible = value;
+            bossLive3.Visible = value;
+            bossLive4.Visible = value;
+            bossLive5.Visible = value;
+            bossLive6.Visible = value;
+            bossLive7.Visible = value;
+            bossLive8.Visible = value;
+            bossLive9.Visible = value;
+            bossLive10.Visible = value;
         }
 
         private void movePlayer() {
@@ -140,9 +163,8 @@ namespace SpaceShooters {
             playerPB.Location = newPos;
         }
 
-        private void removeEnemySprites(){
-            for (int i = sprites.Count - 1; i >= 0; i--)
-            {
+        private void removeEnemySprites() {
+            for (int i = sprites.Count - 1; i >= 0; i--) {
                 Controls.Remove(sprites.ElementAt(i).enemy);
                 sprites.RemoveAt(i);
             }
@@ -153,8 +175,7 @@ namespace SpaceShooters {
             DialogResult gameIsOver = MessageBox.Show("Game Over!", "Game Over", MessageBoxButtons.OK);
             Close();
         }
-        private void gameWon()
-        {
+        private void gameWon() {
             timer1.Stop();
             DialogResult gameIsOver = MessageBox.Show("You have won!\nCongratulations!", "You won", MessageBoxButtons.OK);
             Close();
@@ -179,23 +200,20 @@ namespace SpaceShooters {
                 projectiles.ForEach(p => p.move());
             if (sprites.Count > 0)
                 sprites.ForEach(s => s.move());
-            if(bossProjectiles.Count > 0)
+            if (bossProjectiles.Count > 0)
                 bossProjectiles.ForEach(p => p.moveDown());
         }
 
-        private void checkIfPlayerHitBoss()
-        {
-            for (int i = projectiles.Count - 1; i >= 0; i--)
-            {
+        private void checkIfPlayerHitBoss() {
+            for (int i = projectiles.Count - 1; i >= 0; i--) {
                 Projectile projectile = projectiles.ElementAt(i);
                 bool isHit = checkIsBossHit(projectile, boss);
 
-                if (isHit)
-                {
+                if (isHit) {
                     onBossHits++;
                     Controls.Remove(projectiles.ElementAt(i).image);
                     projectiles.RemoveAt(i);
-                    switch (onBossHits){
+                    switch (onBossHits) {
                         case 1: bossLive1.Visible = false; break;
                         case 2: bossLive2.Visible = false; break;
                         case 3: bossLive3.Visible = false; break;
@@ -211,8 +229,7 @@ namespace SpaceShooters {
                 }
             }
         }
-        private bool checkIsBossHit(Projectile p, EnemyBoss b)
-        {
+        private bool checkIsBossHit(Projectile p, EnemyBoss b) {
             Point projectileLocation = p.image.Location;
             Point bossLocation = b.image.Location;
             int pX = projectileLocation.X;
@@ -226,33 +243,27 @@ namespace SpaceShooters {
             return false;
         }
 
-        private void checkIfBossHitPlayer()
-        {
-            for (int i = bossProjectiles.Count - 1; i >= 0; i--)
-            {
+        private void checkIfBossHitPlayer() {
+            for (int i = bossProjectiles.Count - 1; i >= 0; i--) {
                 Projectile projectile = bossProjectiles.ElementAt(i);
                 bool isHit = checkIsPlayerHit(projectile, playerPB);
 
-                if (isHit)
-                {
+                if (isHit) {
                     mistakes++;
                     Controls.Remove(bossProjectiles.ElementAt(i).image);
                     bossProjectiles.RemoveAt(i);
                     break;
                 }
-                if (mistakes == 1){
+                if (mistakes == 1) {
                     firstLifeToGo.Visible = false;
-                }
-                else if (mistakes == 2){
+                } else if (mistakes == 2) {
                     secondLifeToGo.Visible = false;
-                }
-                else if (mistakes == 3){
+                } else if (mistakes == 3) {
                     thirdLifeToGo.Visible = false;
                 }
             }
         }
-        private bool checkIsPlayerHit(Projectile p, PictureBox player)
-        {
+        private bool checkIsPlayerHit(Projectile p, PictureBox player) {
             Point projectileLocation = p.image.Location;
             Point playerLocation = player.Location;
             int pX = projectileLocation.X;
@@ -352,5 +363,7 @@ namespace SpaceShooters {
             int y = boss.image.Location.Y + 150;
             return new Point(x, y);
         }
+
+        
     }
 }
