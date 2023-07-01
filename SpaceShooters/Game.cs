@@ -84,6 +84,8 @@ namespace SpaceShooters {
             if (playerPoints >= 150 && !bossSpawned) { // 100 points, 10 for testing
                 spawnBoss();
                 bossSpawned = true;
+                removeAllCurrentProjectiles();
+                projectiles.Clear();
                 showBossLifeBar(true);
             }
 
@@ -120,6 +122,14 @@ namespace SpaceShooters {
                 endGame();
             if (bossDefeated)
                 gameWon();
+        }
+
+        private void removeAllCurrentProjectiles()
+        {
+            foreach (var projectile in projectiles)
+            {
+                Controls.Remove(projectile.image);
+            }
         }
 
         private void changeBG() {

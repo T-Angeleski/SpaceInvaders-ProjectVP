@@ -261,6 +261,24 @@ namespace SpaceShooters.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream game_over_music {
+            get {
+                return ResourceManager.GetStream("game_over_music", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream game_won_music {
+            get {
+                return ResourceManager.GetStream("game_won_music", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap keyboard {
@@ -313,10 +331,47 @@ namespace SpaceShooters.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sound_speaker_disabled {
+            get {
+                object obj = ResourceManager.GetObject("sound_speaker_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sound_speaker_icon_on_white_background_free_vector {
             get {
                 object obj = ResourceManager.GetObject("sound_speaker_icon_on_white_background_free_vector", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Space_Invaders_Boss_Music {
+            get {
+                return ResourceManager.GetStream("Space_Invaders_Boss_Music", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Space_Invaders_Game_Music {
+            get {
+                return ResourceManager.GetStream("Space_Invaders_Game_Music", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Space_invaders_Main_Menu_Music {
+            get {
+                return ResourceManager.GetStream("Space_invaders_Main_Menu_Music", resourceCulture);
             }
         }
         

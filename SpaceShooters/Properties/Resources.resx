@@ -163,6 +163,12 @@
   <data name="error_transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\error_transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="game_over_music" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\game_over_music.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="game_won_music" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\game_won_music.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="keyboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\keyboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,8 +184,20 @@
   <data name="missing_transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\missing_transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="sound_speaker_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sound-speaker-disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sound_speaker_icon_on_white_background_free_vector" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sound-speaker-icon-on-white-background-free-vector.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Space_Invaders_Boss_Music" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Space_Invaders_Boss_Music.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Space_Invaders_Game_Music" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Space_Invaders_Game_Music.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Space_invaders_Main_Menu_Music" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Space_invaders_Main_Menu_Music.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="triangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\triangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

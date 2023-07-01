@@ -119,6 +119,12 @@
     <Content Include="Properties\Images\keyboard.png" />
     <Content Include="Properties\Images\missing.png" />
     <Content Include="Properties\Images\missing_transparent.png" />
+    <None Include="Resources\sound-speaker-disabled.png" />
+    <None Include="Resources\game_won_music.wav" />
+    <None Include="Resources\game_over_music.wav" />
+    <None Include="Resources\Space_Invaders_Boss_Music.wav" />
+    <None Include="Resources\Space_Invaders_Game_Music.wav" />
+    <None Include="Resources\Space_invaders_Main_Menu_Music.wav" />
     <None Include="Resources\background4.png" />
     <None Include="Resources\background3.png" />
     <None Include="Resources\background2.jpg" />
