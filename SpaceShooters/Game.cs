@@ -81,7 +81,7 @@ namespace SpaceShooters {
 
             // Spawn enemies untill point threshold is reached
             if (playerPoints < 150 && timerTicks % 20 == 0) spawnEnemies();
-            if (playerPoints >= 150 && !bossSpawned) { // 100 points, 10 for testing
+            if (playerPoints >= 150 && !bossSpawned) { 
                 spawnBoss();
                 bossSpawned = true;
                 removeAllCurrentProjectiles();
